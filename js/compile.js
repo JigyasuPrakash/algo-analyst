@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('#form #submit').click(function () {
         $('#output').hide();
-        $('#output').fadeIn();
+		$('#output').html('<br/>Generating the output &nbsp;&nbsp;&nbsp; <img src="./img/loader.gif" />');
+		$('#output').fadeIn();
         $('#form #submit').attr("disabled", "disabled");
         $('#form .error').html('');
         var isError = 0;
