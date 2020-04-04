@@ -1,4 +1,42 @@
 $(document).ready(function () {
+
+    let headerCode = "";
+    let output = [];
+    let analytics = [];
+
+    $("#language").change(function () {
+        let lang = $('#form #language').val();
+        switch (lang) {
+            case "c":
+                headerCode = "#include <stdio.h>\n" +
+                    "#include <stdlib.h>\n" +
+                    "int arr[100000];" +
+                    "void mySortAlgo(int);\n" +
+                    "void main() {\n" +
+                    "\tint i, size; scanf(\"%d\",&size);\n" +
+                    "\tfor(i = 0; i < size; i++) {\n" +
+                    "\t\tscanf(\"%d\",&arr[i]);\n" +
+                    "\t}\n" +
+                    "\tmySortAlgo(size);\n" +
+                    "}";
+                break;
+            case "cpp":
+                headerCode = "";
+                break;
+            case "java":
+                headerCode = "";
+                break;
+            case "python2.7":
+                headerCode = "file1 = open('input.txt', 'r')\n" +
+                    "arr = file1.readlines()\n";
+                break;
+            case "python3.2":
+                headerCode = "";
+                break;
+        }
+        $('#headerCode').html(headerCode);
+    })
+
     $('#form #submit').click(function () {
         $('#output').hide();
         $('#output').html('<br/>Generating the output &nbsp;&nbsp;&nbsp; <img src="./img/loader.gif" />');
@@ -6,9 +44,13 @@ $(document).ready(function () {
         $('#form #submit').attr("disabled", "disabled");
         $('#form .error').html('');
         var isError = 0;
-        var code = $('#form #code').val();
-        var input = $('#form #input').val();
+        var code = headerCode + $('#form #code').val();
         var language = $('#form #language').val();
+
+        if (language == '') {
+            alert("Select Language");
+        }
+
         if ($.trim(code) == '') {
             $('#form #errorCode').html('The code area is empty');
             $('#form #code').focus();
@@ -21,26 +63,37 @@ $(document).ready(function () {
             $('#form #submit').removeAttr("disabled", "disabled");
             return false;
         }
+
         $.ajaxSetup({
             cache: false
         });
-        var dataString = 'code=' + encodeURIComponent(code) + '&input=' + encodeURIComponent(input) + '&language=' + encodeURIComponent(language);
+        var dataString = 'code=' + encodeURIComponent(code) + '&language=' + encodeURIComponent(language);
         $.ajax({
             type: "POST",
             url: "compile.php",
             data: dataString,
-            success: function (res, exeTime) {
+            success: function (res) {
                 console.log(res);
-                let msg = res.split("#_#");
-                $('#output').html(msg[0]);
-                $('#exeTime').html("<pre>Execution Time(secs): " + msg[1] + "</pre>");
+                let line = res.split("##__##");
+                line.forEach(exe => {
+                    let x = exe.split("#_#");
+                    output.push(x[0]);
+                    analytics.push(Number(x[1]));
+                });
+                output.pop();
+                analytics.pop();
+                console.log(output)
+                $('#output').html(output[0]);
+                $('#exeTime').html("<pre>Execution Time(secs): " + analytics + "</pre>");
                 $('#form #submit').removeAttr("disabled", "disabled");
+                console.log(analytics)
             },
             error: function (ob, errStr) {
                 $('#output').html('');
                 $('#form #submit').removeAttr("disabled", "disabled");
             }
         });
+
         return false;
     });
 });

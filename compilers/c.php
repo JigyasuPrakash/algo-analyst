@@ -35,7 +35,7 @@ if (trim($error) == "") {
 	$end = microtime(true);
 	$exeTime = round(($end-$start), 3);
 
-	echo "<pre>$output#_#$exeTime</pre>";
+	echo "$output#_#$exeTime";
 } else if (!strpos($error, "error")) {
 	echo "<pre>$error</pre>";
 	if (trim($input) == "") {
@@ -45,7 +45,7 @@ if (trim($error) == "") {
 		$output = shell_exec($out);
 	}
 } else {
-	echo "<pre>$error</pre>";
+	echo "$error";
 }
 exec("rm $filename_code");
 exec("rm *.o");
