@@ -6,17 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="shortcut icon" href="./styles/favicon.png" />
-	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script type="text/javascript" src="./js/compile.js"></script>
 	<script type="text/javascript" src="./js/tab.js"></script>
-	<script type="text/javascript" src="./js/jquery.form.js"></script>
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<title>Algo Analyst</title>
 </head>
 
 <body>
-	<center><h1>Algo Analyst</h1></center>
+	<center>
+		<h1>Algo Analyst</h1>
+	</center>
 	<div class="container">
 		<form action="compile.php" method="post" id="form">
 			Select Language:
@@ -38,7 +38,8 @@
 					<input type="submit" value="Submit" id="submit">
 					<input type="reset" value="Reset"><br />
 				</div>
-				<div class="col-xl-4"><strong>Output:</strong>
+				<div class="col-xl-4">
+					<strong>Output:</strong>
 					<span id="output"></span>
 				</div>
 			</div>
