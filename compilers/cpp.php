@@ -1,16 +1,16 @@
 <?php
-	$CC="gcc";
+	$CC="g++";
 	$out="./a.out";
 	$code=$_POST["code"];
 	$input=$_POST["input"];
-	$filename_code="main.c";
+	$filename_code="main.cpp";
 	$filename_in="input.txt";
 	$filename_error="error.txt";
 	$executable="a.out";
 	$command=$CC." -lm ".$filename_code;	
 	$command_error=$command." 2>".$filename_error;
-	
-    $file_code=fopen($filename_code,"w+");
+
+	$file_code=fopen($filename_code,"w+");
 	fwrite($file_code,$code);
 	fclose($file_code);
 	$file_in=fopen($filename_in,"w+");
