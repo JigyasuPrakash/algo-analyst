@@ -10,6 +10,8 @@
 	$command=$CC." -lm ".$filename_code;	
 	$command_error=$command." 2>".$filename_error;
 
+	$start = microtime(true);
+
 	$file_code=fopen($filename_code,"w+");
 	fwrite($file_code,$code);
 	fclose($file_code);
@@ -28,8 +30,12 @@
 		}else{
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
-        }
-        echo "<pre>$output</pre>";
+		}
+		
+		$end = microtime(true);
+		$exeTime = round(($end-$start), 3);
+
+        echo "<pre>$output#_#$exeTime</pre>";
 	}else if(!strpos($error,"error")){
 		echo "<pre>$error</pre>";
 		if(trim($input)==""){

@@ -12,6 +12,8 @@
 	$command_error=$command." 2>".$filename_error;
 	$runtime_error_command=$out." 2>".$runtime_file;
 
+	$start = microtime(true);
+
 	$file_code=fopen($filename_code,"w+");
 	fwrite($file_code,$code);
 	fclose($file_code);
@@ -35,8 +37,12 @@
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
+
+		$end = microtime(true);
+		$exeTime = round(($end-$start), 3);
+
 		echo "<pre>$runtime_error</pre>";
-		echo "<pre>$output</pre>";	
+		echo "<pre>$output#_#$exeTime</pre>";	
 	}else if(!strpos($error,"error")){
 		echo "<pre>$error</pre>";
 		if(trim($input)==""){

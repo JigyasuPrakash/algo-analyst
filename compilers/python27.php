@@ -5,7 +5,9 @@
 	$filename_code="main.py";
 	$filename_in="input.txt";
     $filename_error="error.txt";
-    
+	
+	$start = microtime(true);
+
 	$command=$CC." ".$filename_code;	
 	$command_error=$command." 2>".$filename_error;
 	$file_code=fopen($filename_code,"w+");
@@ -26,7 +28,11 @@
 			$command=$command." < ".$filename_in;
 			$output=shell_exec($command);
 		}
-		echo "<pre>$output</pre>";
+
+		$end = microtime(true);
+		$exeTime = round(($end-$start), 3);
+
+        echo "<pre>$output#_#$exeTime</pre>";
 	}else{
 		echo "<pre>$error</pre>";
 	}
