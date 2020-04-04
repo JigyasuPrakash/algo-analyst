@@ -22,35 +22,24 @@
 	shell_exec($command_error);
 	$error=file_get_contents($filename_error);
 
-	if(trim($error)=="")
-	{
-		if(trim($input)=="")
-		{
+	if(trim($error)==""){
+		if(trim($input)==""){
 			$output=shell_exec($out);
-		}
-		else
-		{
+		}else{
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
-		}
-		echo "<pre>$output</pre>";
-	}
-	else if(!strpos($error,"error"))
-	{
+        }
+        echo "<pre>$output</pre>";
+	}else if(!strpos($error,"error")){
 		echo "<pre>$error</pre>";
-		if(trim($input)=="")
-		{
+		if(trim($input)==""){
 			$output=shell_exec($out);
-		}
-		else
-		{
+		}else{
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
-		}
+        }
 		echo "<pre>$output</pre>";
-	}
-	else
-	{
+	}else{
 		echo "<pre>$error</pre>";
 	}
 	exec("rm $filename_code");

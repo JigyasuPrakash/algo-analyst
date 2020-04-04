@@ -24,16 +24,12 @@
 	shell_exec($command_error);
 	$error=file_get_contents($filename_error);
 
-	if(trim($error)=="")
-	{
-		if(trim($input)=="")
-		{
+	if(trim($error)==""){
+		if(trim($input)==""){
 			shell_exec($runtime_error_command);
 			$runtime_error=file_get_contents($runtime_file);
 			$output=shell_exec($out);
-		}
-		else
-		{
+		}else{
 			shell_exec($runtime_error_command);
 			$runtime_error=file_get_contents($runtime_file);
 			$out=$out." < ".$filename_in;
@@ -41,23 +37,16 @@
 		}
 		echo "<pre>$runtime_error</pre>";
 		echo "<pre>$output</pre>";	
-	}
-	else if(!strpos($error,"error"))
-	{
+	}else if(!strpos($error,"error")){
 		echo "<pre>$error</pre>";
-		if(trim($input)=="")
-		{
+		if(trim($input)==""){
 			$output=shell_exec($out);
-		}
-		else
-		{
+		}else{
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
 		echo "<pre>$output</pre>";
-	}
-	else
-	{
+	}else{
 		echo "<pre>$error</pre>";
 	}
 	exec("rm $filename_code");
