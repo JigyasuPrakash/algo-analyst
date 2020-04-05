@@ -2,7 +2,6 @@ function createAnalyticsGraph(analytics) {
     let canvas = document.getElementById('analystChart');
     canvas.style.display = 'block';
     let ctx = canvas.getContext('2d');
-    analytics = [2.786, 8.342, 15.324, 20.123, 50.532];
     chart = new Chart(ctx, {
         type: 'line',
 
