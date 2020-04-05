@@ -3,7 +3,6 @@
 [![](https://img.shields.io/github/issues/JigyasuPrakash/algo-analyst)](https://github.com/JigyasuPrakash/algo-analyst/issues) [![GitHub forks](https://img.shields.io/github/forks/JigyasuPrakash/algo-analyst)](https://github.com/JigyasuPrakash/algo-analyst/network) [![GitHub stars](https://img.shields.io/github/stars/JigyasuPrakash/algo-analyst)](https://github.com/JigyasuPrakash/algo-analyst/stargazers) [![GitHub license](https://img.shields.io/github/license/JigyasuPrakash/algo-analyst)](https://github.com/JigyasuPrakash/algo-analyst)
 ![](https://img.shields.io/badge/PR-Welcome-brightgreen) ![](https://img.shields.io/badge/-Javascript-brightgreen) ![](https://img.shields.io/badge/-PHP-brown) ![](https://img.shields.io/badge/-HTML-brightgreen)
 
-
 Deployed project available <a href="https://algo-analyst-git-algoanalyst.apps.ca-central-1.starter.openshift-online.com/">here</a>.
 This project aims to provide platform for writting efficient sorting algorithm.
 
