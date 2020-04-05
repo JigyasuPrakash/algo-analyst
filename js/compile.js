@@ -18,9 +18,6 @@ $(document).ready(function () {
                     "\tmySortAlgo(size);\n" +
                     "}";
                 break;
-            case "cpp":
-                headerCode = "";
-                break;
             case "java":
                 headerCode = "import java.util.*;\n" +
                     "/* Create class Test and a static function mySortAlgo too begin */\n" +
