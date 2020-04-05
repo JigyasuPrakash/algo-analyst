@@ -108,7 +108,9 @@ $(document).ready(function () {
                 $('#form #submit').removeAttr("disabled", "disabled");
             }
         });
-
+        createAnalyticsGraph(analytics);
         return false;
     });
 });
+
+createAnalyticsGraph();

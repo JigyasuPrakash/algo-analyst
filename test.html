@@ -29,67 +29,126 @@
     <section class="home wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
         <div class="name">
             <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">Algo Analyst</h1>
-            <h3 class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s"> |
-                <a href="#about" style="text-decoration: none; color: white;">About</a> |
-                <a href="#implementation" style="text-decoration: none; color: white;">Implementation</a> |
-            </h3>
+            <h3 class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.5s">A Sorting Algorithm Analysis
+                Web Application</h3>
         </div>
     </section>
 
     <section id="about">
-
+        <div class="section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
+            <h2>About</h2>
+        </div>
+        <div class="row" style="color: white; text-align: center; padding: 60px; font-size: 18px;">
+            <div class="col-xl-6">
+                <p>This project aims to analyse the sorting algorithm to be specific. Where user have option to write
+                    his/her algorithm in any one of the language (C, Java, Python, Python3) and completes the program.
+                    The template provided by application accepts the input and pass the arr as parameter to the function
+                    which is to be completed by user.</p>
+                <p> The user written code is sent to the server where it is written
+                    onto a file and respective compiler is triggered to execute the program about 5 times with different
+                    set and number of input and the execution time is logged every time. Then all the data is sent back
+                    to client where a String parser parse the response and creates an array of the execution time</p>
+            </div>
+            <div class="col-xl-6">
+                <p style="text-align: left;">Technologies used in developing this project are:
+                    <br><br><i class="fas fa-dot-circle"></i> Front End:
+                    <br>&Tab;1. HTML
+                    <br>&Tab;2. CSS
+                    <br>&Tab;3. Javascript
+                    <br><br><i class="fas fa-dot-circle"></i> Back End:
+                    <br>&Tab;1. PHP
+                    <br>&Tab;2. Javascript
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="implementation" style="color: black;">
+    <section id="implementation">
         <div class="section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
             <h2>Implementation</h2>
         </div>
-        <form action="compile.php" method="post" id="form" style="color: white; margin: 50px;">
-            <div class="row" style="background-color: lightgrey; padding: 10px;">
-                <div class="col-12">
-                    <center>
-                        <h5 style="color: black;"><b>Select Language:</b>
-                            <select class="btn btn-secondary dropdown-toggle" name="language" id="language">
-                                <option value="">--Select--</option>
-                                <option value="c">C</option>
-                                <option value="java">Java</option>
-                                <option value="python2.7">Python</option>
-                                <option value="python3.2">Python3</option>
-                            </select></h5>
-                    </center>
+        <form action="compile.php" method="post" id="form" style="color: white; margin: 50px; opacity: 0.9;">
+            <div class="row"
+                style="background-color: lightgrey; padding: 10px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <center>
+                                <h5 style="color: black;">Select Language:
+                                    <select class="btn btn-secondary dropdown-toggle" name="language" id="language">
+                                        <option value="">--Select--</option>
+                                        <option value="c">C</option>
+                                        <option value="java">Java</option>
+                                        <option value="python2.7">Python</option>
+                                        <option value="python3.2">Python3</option>
+                                    </select></h5>
+                            </center>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row" style="background-color: lightgrey; padding: 15px;">
-                <div class="col-xl-5" style="border: solid 1px black;">
-                    <strong style="color: black;">Enter Your code here:<br /></strong>
-                    <textarea name="header" rows="5" cols="67" disabled
-                        id="headerCode">/* Static Boilerplate Code will be loaded here */</textarea><br />
-                    <textarea name="code" rows="10" cols="67" onkeydown=insertTab(this,event) id="code"
-                        placeholder="//Begin your function here"></textarea><br />
-                    <span id="errorCode" style="color: red;"></span><br />
+            <div class="row"
+                style="background-color: lightgrey; padding: 15px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <center>
+                                <h3 class="card-title" style="color: black;">Enter your code here:</h3>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <textarea name="header" rows="5" cols="75" disabled
+                                id="headerCode">/* Static Boilerplate Code will be loaded here */</textarea><br />
+                            <textarea name="code" rows="10" cols="75" onkeydown=insertTab(this,event) id="code"
+                                placeholder="/* Begin your code from here */"></textarea><br />
+                            <span id="errorCode" style="color: red;"></span><br />
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-xl-2">
+                <div class="col-xl-1">
                     <center>
                         <input class="btn-success btn" style="margin: 5px;" type="submit" value="Submit" id="submit">
                         <br />
                         <input class="btn-primary btn" style="margin: 5px;" type="reset" value="Reset"><br />
                     </center>
                 </div>
-                <div class="col-xl-5" style="border: solid 1px black; ">
-                    <strong style="color: black;">Output:</strong><br />
-                    <span id="output" rows="19"></span>
+                <div class="col-xl-5">
+                    <div class="card ">
+                        <div class="card-header">
+                            <center>
+                                <h3 class="card-title" style="color: black;">Output</h3>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <span id="output" rows="19"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-
+            <div class="row wow fadeInUp" style="margin: 15px;" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <center>
+                                <h3 class="card-title" style="color: black;">Analytics <h6 style="color: black;">
+                                        Logarithmic Scale [Input Size vs Time(secs)]</h6>
+                                </h3>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="analystChart"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </section>
 
     <section id="myfooter" style="text-align: center; color: white;">
-        <h4>Author:</h4>
-        <h3>- <a href="https://www.linkedin.com/in/jigyasuprakash/">Jigyasu Prakash</a></h3>
+        <h4>Developer:</h4>
+        <h3>- <a href="https://itsjigyasu.me">Jigyasu Prakash</a></h3>
     </section>
 
     <!--Scripts are here-->
@@ -121,6 +180,8 @@
         };
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin=anonymous></script>
+    <script src="./js/chartjs.min.js"></script>
+    <script src="./js/graph.js"></script>
     <script type="text/javascript" src="./js/compile.js"></script>
     <script type="text/javascript" src="./js/tab.js"></script>
 </body>
