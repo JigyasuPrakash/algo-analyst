@@ -8,13 +8,12 @@ $command = $CC . " " . $filename_code;
 $command_error = $command . " 2>" . $filename_error;
 $response = "";
 
-for ($j = 1; $j < 5; $j++) {
+for ($j = 1; $j < 4; $j++) {
 	$input = "";
-	$n = pow(10, $j);
+	$n = pow(100, $j);
 	for ($i = 0; $i < $n; $i++) {
 		$input .= rand(0, $n*2)."\n";
 	}
-	$start = microtime(true);
 
 	$file_code = fopen($filename_code, "w+");
 	fwrite($file_code, $code);
@@ -25,7 +24,11 @@ for ($j = 1; $j < 5; $j++) {
 	exec("chmod 777 $filename_error");
 	shell_exec($command_error);
 	$error = file_get_contents($filename_error);
+	
 	if (trim($error) == "") {
+
+		$start = microtime(true);
+
 		if (trim($input) == "") {
 			$output = shell_exec($command);
 		} else {

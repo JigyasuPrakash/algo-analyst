@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
     let headerCode = "";
-    let output = [];
-    let analytics = [];
 
     $("#language").change(function () {
         let lang = $('#form #language').val();
@@ -24,7 +22,19 @@ $(document).ready(function () {
                 headerCode = "";
                 break;
             case "java":
-                headerCode = "";
+                headerCode = "import java.util.*;\n" +
+                "/* Create class Test and a static function mySortAlgo too begin */\n"+
+                    "class Main {\n" +
+                    "\tpublic static void main (String args[]) {\n" +
+                    "\t\tScanner sc = new Scanner(System.in);\n"+
+                    "\t\tint size = sc.nextInt();\n"+
+                    "\t\tint[] arr = new int[size];\n"+
+                    "\t\tfor(int i = 0; i < size; i++ ) {\n"+
+                    "\t\t\tarr[i] = sc.nextInt();\n"+
+                    "\t\t}\n"+
+                    "\t\tTest.mySortAlgo(arr, size);\n"+
+                    "\t}\n"+
+                    "}";
                 break;
             case "python2.7":
                 headerCode = "file1 = open('input.txt', 'r')\n" +
@@ -38,6 +48,8 @@ $(document).ready(function () {
     })
 
     $('#form #submit').click(function () {
+        let analytics = []
+        let output = []
         $('#output').hide();
         $('#output').html('<br/>Generating the output &nbsp;&nbsp;&nbsp; <img src="./img/loader.gif" />');
         $('#output').fadeIn();
@@ -49,6 +61,10 @@ $(document).ready(function () {
 
         if (language == '') {
             alert("Select Language");
+            $('#output').html('');
+            $('#output').hide();
+            $('#form #submit').removeAttr("disabled", "disabled");
+            return false;
         }
 
         if ($.trim(code) == '') {
