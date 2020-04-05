@@ -14,9 +14,12 @@ This project aims to provide platform for writting efficient sorting algorithm.
 ### Installation (Linux)
 
 - Make sure c, java, python compilers are already installed on your system
-    > $ git clone https://github.com/JigyasuPrakash/algo-analyst.git
-    > \# Run apache (or any other) server at any port and place the cloned repo at hosting folder
-    > \# Open the browser at http://localhost:{port}/{cloned-repo-name}/
+
+  - > $ git clone https://github.com/JigyasuPrakash/algo-analyst.git
+    
+  - > \# Run apache (or any other) server at any port and place the cloned repo at hosting folder
+    
+  - > \# Open the browser at http://localhost:{port}/{cloned-repo-name}/
 
 ### Developer
 - <a href="https://itsjigyasu.me">Jigyasu Prakash</a> 
