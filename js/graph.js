@@ -13,7 +13,7 @@ function createAnalyticsGraph(analytics) {
                 pointRadius: 2,
                 pointHoverRadius: 4,
                 borderWidth: 3,
-                label: "Input Size",
+                label: "Time(in secs)",
                 data: analytics
             }]
         },

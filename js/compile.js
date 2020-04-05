@@ -99,16 +99,18 @@ $(document).ready(function () {
                 });
                 output.pop();
                 analytics.pop();
+                console.log(output);
+                console.log(analytics);
                 $('#output').html(output[0]);
                 $('#exeTime').html("<pre>Execution Time(secs): " + analytics + "</pre>");
                 $('#form #submit').removeAttr("disabled", "disabled");
+                createAnalyticsGraph(analytics);
             },
             error: function (ob, errStr) {
                 $('#output').html('');
                 $('#form #submit').removeAttr("disabled", "disabled");
             }
         });
-        createAnalyticsGraph(analytics);
         return false;
     });
 });
