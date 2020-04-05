@@ -23,17 +23,17 @@ $(document).ready(function () {
                 break;
             case "java":
                 headerCode = "import java.util.*;\n" +
-                "/* Create class Test and a static function mySortAlgo too begin */\n"+
+                    "/* Create class Test and a static function mySortAlgo too begin */\n" +
                     "class Main {\n" +
                     "\tpublic static void main (String args[]) {\n" +
-                    "\t\tScanner sc = new Scanner(System.in);\n"+
-                    "\t\tint size = sc.nextInt();\n"+
-                    "\t\tint[] arr = new int[size];\n"+
-                    "\t\tfor(int i = 0; i < size; i++ ) {\n"+
-                    "\t\t\tarr[i] = sc.nextInt();\n"+
-                    "\t\t}\n"+
-                    "\t\tTest.mySortAlgo(arr, size);\n"+
-                    "\t}\n"+
+                    "\t\tScanner sc = new Scanner(System.in);\n" +
+                    "\t\tint size = sc.nextInt();\n" +
+                    "\t\tint[] arr = new int[size];\n" +
+                    "\t\tfor(int i = 0; i < size; i++ ) {\n" +
+                    "\t\t\tarr[i] = sc.nextInt();\n" +
+                    "\t\t}\n" +
+                    "\t\tTest.mySortAlgo(arr, size);\n" +
+                    "\t}\n" +
                     "}";
                 break;
             case "python2.7":
@@ -41,7 +41,8 @@ $(document).ready(function () {
                     "arr = file1.readlines()\n";
                 break;
             case "python3.2":
-                headerCode = "";
+                headerCode = "file1 = open('input.txt', 'r')\n" +
+                    "arr = file1.readlines()\n";
                 break;
         }
         $('#headerCode').html(headerCode);

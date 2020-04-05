@@ -12,9 +12,9 @@
 	$runtime_error_command=$out." 2>".$runtime_file;
 	$response = "";
 
-	for ($j = 1; $j < 4; $j++) {
+	for ($j = 1; $j < 6; $j++) {
 		$input = "";
-		$n = pow(100, $j);
+		$n = pow(10, $j);
 		$input .= $n."\n";
 		for ($i = 0; $i < $n; $i++) {
 			$input .= rand(0, $n*2)."\n";

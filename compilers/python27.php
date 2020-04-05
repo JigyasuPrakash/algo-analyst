@@ -8,9 +8,9 @@ $command = $CC . " " . $filename_code;
 $command_error = $command . " 2>" . $filename_error;
 $response = "";
 
-for ($j = 1; $j < 4; $j++) {
+for ($j = 1; $j < 6; $j++) {
 	$input = "";
-	$n = pow(100, $j);
+	$n = pow(10, $j);
 	for ($i = 0; $i < $n; $i++) {
 		$input .= rand(0, $n*2)."\n";
 	}
