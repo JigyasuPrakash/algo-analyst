@@ -41,7 +41,7 @@
 		<div class="row" style="color: white; text-align: center; padding: 60px; font-size: 18px;">
 			<div class="col-xl-6">
 				<p>This project aims to analyse the sorting algorithm to be specific. Where user have option to write
-					his/her algorithm in any one of the language (C, Java, Python) and completes the program.
+					his/her algorithm in any one of the language (C or Java) and completes the program.
 					The template provided by application accepts the input and pass the arr as parameter to the function
 					which is to be completed by user.</p>
 				<p> The user written code is sent to the server where it is written
@@ -79,8 +79,6 @@
 										<option value="">--Select--</option>
 										<option value="c">C</option>
 										<option value="java">Java</option>
-										<option value="python2.7">Python</option>
-										<option value="python3.2">Python3</option>
 									</select></h5>
 							</center>
 						</div>
@@ -97,9 +95,9 @@
 							</center>
 						</div>
 						<div class="card-body">
-							<textarea name="header" rows="5" cols="75" disabled
+							<textarea name="header" rows="5" cols="55" disabled
 								id="headerCode">/* Static Boilerplate Code will be loaded here */</textarea><br />
-							<textarea name="code" rows="10" cols="75" onkeydown=insertTab(this,event) id="code"
+							<textarea name="code" rows="10" cols="55" onkeydown=insertTab(this,event) id="code"
 								placeholder="/* Begin your code from here */"></textarea><br />
 							<span id="errorCode" style="color: red;"></span><br />
 						</div>
@@ -133,7 +131,7 @@
 						<div class="card-header">
 							<center>
 								<h3 class="card-title" style="color: black;">Analytics <h6 style="color: black;">
-										Logarithmic Scale [Input Size vs Time(secs)]</h6>
+										Input Size vs Time(secs)</h6>
 								</h3>
 							</center>
 						</div>

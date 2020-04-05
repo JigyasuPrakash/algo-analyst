@@ -10,9 +10,9 @@ $command = $CC . " -lm " . $filename_code;
 $command_error = $command . " 2>" . $filename_error;
 $response = "";
 
-for ($j = 1; $j < 6; $j++) {
+for ($j = 1; $j <= 6; $j++) {
 	$input = "";
-	$n = pow(10, $j);
+	$n = 10000*$j;
 	$input .= $n."\n";
 	for ($i = 0; $i < $n; $i++) {
 		$input .= rand(0, $n*2)."\n";

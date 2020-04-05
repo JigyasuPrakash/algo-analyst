@@ -50,7 +50,15 @@ $(document).ready(function () {
     })
 
     $('#form #submit').click(function () {
+
+        if ($('#form #code').val() == "") {
+            $('#form #errorCode').html('Complete the code first');
+            $('#form #code').focus();
+            return false;
+        }
+
         let analytics = []
+        createAnalyticsGraph(analytics)
         let output = []
         $('#output').hide();
         $('#output').html('<br/>Generating the output &nbsp;&nbsp;&nbsp; <img src="./img/loader.gif" />');
@@ -74,6 +82,7 @@ $(document).ready(function () {
             $('#form #code').focus();
             isFocus = 1;
             isError = 1;
+            return false;
         }
         if (isError == 1) {
             $('#output').html('');

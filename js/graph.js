@@ -6,7 +6,7 @@ function createAnalyticsGraph(analytics) {
         type: 'line',
 
         data: {
-            labels: [10, 100, 1000, 10000, 100000],
+            labels: ["10k", "20k", "30k", "40k", "50k", "60k"],
             datasets: [{
                 borderColor: "#f17e5d",
                 backgroundColor: "rgb(0,0,0,0)",
