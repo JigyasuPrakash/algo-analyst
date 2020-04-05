@@ -5,10 +5,14 @@ $(document).ready(function () {
     $("#language").change(function () {
         let lang = $('#form #language').val();
         switch (lang) {
+            case "":
+                headerCode = "/* Static Boilerplate Code will be loaded here */";
+                break;
             case "c":
                 headerCode = "#include <stdio.h>\n" +
                     "#include <stdlib.h>\n" +
-                    "int arr[100000];" +
+                    "/*create void function mySortAlgo(int size) to begin*/\n" +
+                    "int arr[100000];\n" +
                     "void mySortAlgo(int);\n" +
                     "void main() {\n" +
                     "\tint i, size; scanf(\"%d\",&size);\n" +
@@ -20,7 +24,7 @@ $(document).ready(function () {
                 break;
             case "java":
                 headerCode = "import java.util.*;\n" +
-                    "/* Create class Test and a static function mySortAlgo too begin */\n" +
+                    "/* Create class Test and a static function mySortAlgo to begin */\n" +
                     "class Main {\n" +
                     "\tpublic static void main (String args[]) {\n" +
                     "\t\tScanner sc = new Scanner(System.in);\n" +
@@ -55,7 +59,7 @@ $(document).ready(function () {
         $('#form .error').html('');
         var isError = 0;
         var code = headerCode + $('#form #code').val();
-        var language = $('#form #language').val();
+        var language = $('#language').val();
 
         if (language == '') {
             alert("Select Language");
@@ -87,7 +91,6 @@ $(document).ready(function () {
             url: "compile.php",
             data: dataString,
             success: function (res) {
-                console.log(res);
                 let line = res.split("##__##");
                 line.forEach(exe => {
                     let x = exe.split("#_#");
@@ -96,11 +99,9 @@ $(document).ready(function () {
                 });
                 output.pop();
                 analytics.pop();
-                console.log(output)
                 $('#output').html(output[0]);
                 $('#exeTime').html("<pre>Execution Time(secs): " + analytics + "</pre>");
                 $('#form #submit').removeAttr("disabled", "disabled");
-                console.log(analytics)
             },
             error: function (ob, errStr) {
                 $('#output').html('');

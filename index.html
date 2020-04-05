@@ -11,7 +11,7 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script type="text/javascript" src="./js/compile.js"></script>
 	<script type="text/javascript" src="./js/tab.js"></script>
-	<title>Algo Analyst</title>
+	<title>Algo Analyst | Jigyasu Prakash</title>
 </head>
 
 <body>
@@ -32,8 +32,10 @@
 			<div class="row">
 				<div class="col-xl-8">
 					<strong>Enter Your code here:<br /></strong>
-					<textarea name="header" rows=8 cols=75 disabled id="headerCode">//Static Header</textarea><br />
-					<textarea name="code" rows=12 cols=75 onkeydown=insertTab(this,event) id="code" placeholder="//Begin your function here"></textarea><br />
+					<textarea name="header" rows=7 cols=80 disabled
+						id="headerCode">/* Static Boilerplate Code will be loaded here */</textarea><br />
+					<textarea name="code" rows=12 cols=80 onkeydown=insertTab(this,event) id="code"
+						placeholder="//Begin your function here" autofocus></textarea><br />
 					<span id="errorCode" style="color: red;"></span><br />
 					<input type="submit" value="Submit" id="submit">
 					<input type="reset" value="Reset"><br />
@@ -45,15 +47,17 @@
 			</div>
 		</form>
 	</div>
-<br />
-<br />
-<br />
+	<br />
+	<br />
+	<br />
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-12">
 				<h3>Analytics</h3>
 				<ul>
-					<li id="exeTime"><pre>Execution Time: </pre></li>
+					<li id="exeTime">
+						<pre>Execution Time: </pre>
+					</li>
 				</ul>
 			</div>
 		</div>
